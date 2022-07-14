@@ -22,7 +22,7 @@ for i = 1, tonumber(_OPTIONS["count"]), 1 do
 	file:flush()
 	
 	os.execute("git add commits.txt")
-	os.executef("git commit \"--message=%s #%d\" -q", _OPTIONS["message"], i)
+	os.executef("git commit \"--message=%s #%d\" -q --no-gpg-sign", _OPTIONS["message"], i)
 end
 
 file:close()
